@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Project, User } = require('../models');
-const withAuth = require.apply("../utils/auth")
+const withAuth = require("../utils/auth")
 
 router.get('/', async (req, res) => {
     try {
@@ -55,7 +55,7 @@ router.get('login', (req, res) => {
     res.render('login');
 });
 
-router.ger('checkout', (req, res) => {
+router.get('checkout', (req, res) => {
 
     res.render('checkout', { logged_in: req.session.logged_in })
 });
