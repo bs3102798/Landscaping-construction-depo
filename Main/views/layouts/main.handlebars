@@ -22,7 +22,7 @@
                     <i class="ri-close-line nav__close"></i>
                 </div>
             </div>
-            {{!-- {{#if logged_in}} --}}
+            {{#if logged_in}}
 
             <div class="nav_menu" id="nav_menu">
                 <ul class="nav_list">
@@ -56,7 +56,7 @@
                 <a href="#" class="nav_link">Profile</a>
                 <button class="logout_btn" id="logout"></button>
 
-                {{!-- {{else}} --}}
+                {{else}}
                 <div class="nav_menu" id="nav_menu">
                     <ul class="nav_list">
                         <li><a href="#" class="nav_link">Home</a></li>
@@ -92,6 +92,7 @@
                         <li><a href="#" class="nav_link">Login</a></li>
                     </ul>
                 </div>
+                {{/if}}
             </div>
         </nav>
     </header>
