@@ -5,12 +5,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
-    <header>
 
+    <header class="header">
+        <nav class="nav_container">
+            <div class="nav_data">
+                <a href="/" class="nav_log">
+                    <i class="ri-planet-line"></i> LCD
+                </a>
+                <div class="nav_toggle" id="nav_toggle">
+                    <i class="ri-menu-line nav__burger"></i>
+                    <i class="ri-close-line nav__close"></i>
+                </div>
+            </div>
+            {{!-- {{#if logged_in}} --}}
+
+            <div class="nav_menu" id="nav_menu">
+                <ul class="nav_list">
+                    <li><a href="#" class="nav_link">Home</a></li>
+                    <li class="dropdown_item">
+                        <ul class="dropdown_menu">
+                            <li>
+                                <a href="#" class="dropdown_link">
+                                    <i class="fa fa-area-chart" aria-hidden="true"></i> Rocky
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown_link">
+                                    <i class="fa fa-tree" aria-hidden="true"></i>Tropical
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown_link">
+                                    <i class="fa fa-home" aria-hidden="true"></i> Modern
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown_link">
+                                    <i class="fa fa-leaf" aria-hidden="true"></i> Simple
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <a href="#" class="nav_link">Checkout</a>
+                <a href="#" class="nav_link">Profile</a>
+                <button class="logout_btn" id="logout"></button>
+
+                {{!-- {{else}} --}}
+                <div class="nav_menu" id="nav_menu">
+                    <ul class="nav_list">
+                        <li><a href="#" class="nav_link">Home</a></li>
+                        <li class="dropdown_item">
+                            <div class="nav_link">
+                                Overview<i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                            </div>
+                            <ul class="dropdown_menu">
+                                <li>
+                                    <a href="#" class="dropdown_link">
+                                        <i class="fa fa-area-chart" aria-hidden="true"></i> Rocky
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown_link">
+                                        <i class="fa fa-tree" aria-hidden="true"></i>Tropical
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown_link">
+                                        <i class="fa fa-home" aria-hidden="true"></i> Modern
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown_link">
+                                        <i class="fa fa-leaf" aria-hidden="true"></i> Simple
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li><a href="#" class="nav_link">Contact</a></li>
+                        <li><a href="#" class="nav_link">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
+    <main class="main_container">
+        {{{ body }}}
+    </main>
+    <section>
+        <footer class="footer">
+            <div class="container1">
+                <div class="footer_row">
+                    <div class="footer-section">
+                        <h4>LCD</h4>
+                        <ul class="footer-area">
+                            <li><a href="#">about us</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">affiliat program</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Get help</h4>
+                        <ul class="footer-area">
+                            <li><a href="#">about us</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">affiliat program</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Online Shop</h4>
+                        <ul class="footer-area">
+                            <li><a href="#">about us</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">affiliat program</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Follow Us</h4>
+                        <ul class="footer-area">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+        </footer>
+    </section>
+    {{#if logged_in}}
+
+    <script src="/js/logout.js"></script>
+    <script src="/js/profile.js"></script>
+    <script src="/js/payment.js"></script>
+
+    {{/if}}
+    <script src="/js/main.js"></script>
+
+
 
 </body>
 
