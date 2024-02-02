@@ -1,6 +1,7 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
+
     const email = document.querySelector('#email-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
 
@@ -10,8 +11,8 @@ const loginFormHandler = async (event) => {
             body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'application/json' },
         });
-        if (response.ok) {
 
+        if (response.ok) {
             document.location.replace('/profile');
         } else {
             alert(response.statusText);
@@ -32,6 +33,7 @@ const signupFormHandler = async (event) => {
             body: JSON.stringify({ name, email, password }),
             headers: { 'Content-Type': 'application/json' },
         });
+
         if (response.ok) {
             document.location.replace('/profile');
         } else {

@@ -46,7 +46,6 @@ router.post('/login', async (req, res) => {
     } catch (err) {
         res.status(400).json(err);
     }
-
 });
 
 router.post('/logout', (req, res) => {
@@ -60,4 +59,5 @@ router.post('/logout', (req, res) => {
 });
 
 module.exports = router;
+
 
