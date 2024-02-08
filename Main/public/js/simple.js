@@ -88,9 +88,23 @@ function createStyleElement(style) {
         const priceElement = document.createElement('p');
         priceElement.textContent = `Price: $${style.price}`;
 
+        const imageElement = document.createElement('img');
+        imageElement.src = style.image;
+        imageElement.alt = style.name;
 
+        const buttonElement = document.createElement('button')
+        buttonElement.textContent = `AddToCart ${style.id}`;
+
+        buttonElement.addEventListener('click', () => {
+            addToCart(style);
+        })
+
+
+
+        styleDiv.appendChild(imageElement);
         styleDiv.appendChild(nameElement);
         styleDiv.appendChild(priceElement);
+        styleDiv.appendChild(buttonElement);
 
 
         stylesContainer.appendChild(styleDiv);
