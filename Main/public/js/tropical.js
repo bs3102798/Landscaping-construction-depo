@@ -113,7 +113,7 @@ function createStyleElement(style) {
 
 function display() {
     const storedCart = localStorage.getItem('cart');
-    cart = storedCart ? JSON.parse(storedCart);
+    cart = storedCart ? JSON.parse(storedCart) : [];
 
     const cartList = document.getElementById('cartItems');
     cartList.innerHTML = '';

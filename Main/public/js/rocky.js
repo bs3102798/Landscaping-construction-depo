@@ -100,9 +100,9 @@ function createStyleElement(style) {
         })
 
 
+        styleDiv.appendChild(imageElement);
         styleDiv.appendChild(nameElement);
         styleDiv.appendChild(priceElement);
-        styleDiv.appendChild(imageElement);
         styleDiv.appendChild(buttonElement);
 
 
