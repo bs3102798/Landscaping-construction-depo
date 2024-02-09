@@ -10,26 +10,26 @@ const stylesData = [
     {
         "id": 1,
         "name": "modern Look",
-        "price": 90,
-        "image": "../img/tropical/tropical_1.jpg",
+        "price": 300,
+        "image": "../img/rocky/rock_garden-1.jpg",
     },
     {
         "id": 2,
         "name": "modern Look",
-        "price": 90,
-        "image": "../img/tropical/tropical_2.jpg",
+        "price": 870,
+        "image": "../img/rocky/rock_garden-2.jpg",
     },
     {
         "id": 3,
         "name": "modern Look",
-        "price": 90,
-        "image": "../img/tropical/tropical_3.jpg",
+        "price": 980,
+        "image": "../img/rocky/rock_garden-3.jpg",
     },
     {
         "id": 4,
         "name": "modern Look",
-        "price": 90,
-        "image": "../img/tropical/tropical_4.jpg",
+        "price": 200,
+        "image": "../img/rocky/rock_garden-4.jpg",
     }
 
 ]
@@ -109,6 +109,104 @@ function createStyleElement(style) {
         stylesContainer.appendChild(styleDiv);
 
     })
+}
+
+function displayCart() {
+    const storedCart = localStorage.getItem('cart');
+    cart = storedCart ? JSON.parse(storedCart) : [];
+
+    const cartList = document.getElementById('cartItems');
+    cartList.innerHTML = '';
+
+    cart.forEach(style => {
+        const cartItem = document.createElement('li');
+        cartItem.classList.add('item');
+
+        const itemImage = document.createElement('img')
+        itemImage.src = style.image;
+        itemImage.alt = style.name;
+
+        const itemName = document.createElement('div');
+        itemName.classList.add('name');
+        itemName.textContent = style.name;
+
+        const itemPrice = document.createElement('div');
+        itemPrice.classList.add('totalPrice');
+        itemPrice.textContent = `$${style.price}`;
+
+        const quantity = document.createElement('div')
+        quantity.classList.add('quanity');
+
+        const minusButton = createButton('-', () => {
+            handleQuantityChange(style, -1);
+
+        });
+        const quantityCounter = document.createElement('span');
+        quantityCounter.textContent = style.quantity;
+
+        const plusButton = createButton('+', () => {
+            handleQuantityChange(style, 1)
+        });
+
+        quantity.appendChild(minusButton);
+        quantity.appendChild(quantityCounter);
+        quantity.appendChild(plusButton);
+
+        cartItem.appendChild(itemImage);
+        cartItem.appendChild(itemName);
+        cartItem.appendChild(itemPrice);
+        cartItem.appendChild(quantity);
+
+        cartList.appendChild(cartItem);
+    });
+
+    const totalCost = calculateTotalCost(cart);
+
+    const totalElement = document.createElement('div');
+    totalElement.textContent = `Total Cost: $${totalCost}`;
+    cartList.appendChild(totalElement);
+
+    const cartModal = document.getElementById('cartModal');
+    cartModal.style.display = 'block';
+}
+
+function createButton(text, clickHandler) {
+    const button = document.createElement('button');
+    button.textContent = text;
+    button.addEventListener('click', clickHandler);
+    return button;
+}
+
+function handleQuantityChange(style, change) {
+    style.quantity += change;
+
+    if (style.quantity < 1) {
+        const index = cart.indexOf(style);
+        if (index !== -1) {
+            cart.splice(index, 1);
+        }
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    displayCart();
+
+    const totalCost = calculateTotalCost();
+
+    const totalElement = document.createElement('div');
+    totalElement.classList.add('totalPrice');
+    totalElement.textContent = `$${style.price * style.quantity}`
+
+    const cartList = document.getElementById('cartItems');
+    const existingTotalElement = cartList.querySelector('.totalPrice');
+
+    if (existingTotalElement) {
+        cartList.replaceChild(totalElement, existingTotalElement);
+    } else {
+        cartList.appendChild(totalElement);
+    }
+
+
 }
 
 
