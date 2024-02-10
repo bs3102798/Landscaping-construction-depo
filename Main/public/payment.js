@@ -4,4 +4,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     displayCartOnPaymentPage(cart);
 
-})
+});
+
+function displayCartOnPaymentPage(cart) {
+    const paymentCartContainer = document.getElementById('paymentCart');
+    const cartList = document.createElement('ul');
+
+    cart.forEach(style => {
+
+    })
+}
