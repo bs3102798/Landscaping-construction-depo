@@ -32,10 +32,12 @@ const stylesData = [
         "image": "../img/rocky/rock_garden-4.jpg",
     }
 
+
 ]
 
 iconCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
+    displayCart();
 
 });
 
@@ -54,7 +56,8 @@ function addToCart(style) {
             id: style.id,
             name: style.name,
             price: style.price,
-            image: style.image
+            image: style.image,
+            quantity: 1
         };
         cart.push(newItem)
     }

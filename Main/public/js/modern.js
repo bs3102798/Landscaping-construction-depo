@@ -32,17 +32,21 @@ const stylesData = [
         "image": "../img/modern/modern_land-4.jpg",
     }
 
+
+
+
 ]
 
 iconCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
+    displayCart();
 
 });
 
 closeCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
     document.getElementById('cartModal').style.display = 'none';
-});
+})
 
 function addToCart(style) {
     const existingItem = cart.find(item => item.id === style.id);
@@ -54,7 +58,8 @@ function addToCart(style) {
             id: style.id,
             name: style.name,
             price: style.price,
-            image: style.image
+            image: style.image,
+            quantity: 1
         };
         cart.push(newItem)
     }
@@ -211,4 +216,3 @@ function handleQuantityChange(style, change) {
 
 
 createStyleElement(stylesData)
-
