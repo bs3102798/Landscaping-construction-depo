@@ -115,6 +115,8 @@ router.get("/modern", (req, res) => {
     res.render("modern", { logged_in: req.session.logged_in })
 });
 
+
+
 router.get("/info", (req, res) => {
     res.render("info")
 });
