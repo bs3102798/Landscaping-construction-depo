@@ -589,7 +589,142 @@ svg {
     font-weight: 600;
 }
 
+/* titles */
 .center {
     margin-top: 85px;
-    margin-left: 50%;
+    margin-left: 40%;
+}
+
+/* service */
+
+.service-container {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    margin-left: 15%;
+
+
+}
+
+.service-card {
+
+
+
+    background-color: #ffffff;
+    width: 520px;
+    height: 650px;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+.card-image2 {
+
+
+
+
+    height: 450px;
+    margin-bottom: 15px;
+    background-size: cover;
+    border-radius: 15px 15px 0 0
+}
+
+
+.carr-1 {
+    background-image: url('/img/portfolio/portfolio-1.jpg');
+}
+
+.carr-2 {
+    background-image: url('/img/portfolio/portfolio-2.jpg');
+}
+
+.carr-3 {
+    background-image: url('/img/portfolio/portfolio-3.jpg');
+}
+
+.carr-4 {
+    background-image: url('/img/portfolio/portfolio-4.jpg');
+}
+
+.call-to-action {
+    text-align: center;
+    color: #fff;
+    margin-top: 70px;
+    background-color: var(--black-color);
+}
+
+
+
+/* teams */
+.team-1 {
+    background-image: url('/img/team/team-1.jpg');
+}
+
+
+.team-2 {
+    background-image: url('/img/team/team-2.jpg');
+}
+
+
+.team-3 {
+    background-image: url('/img/team/team-3.jpg');
+}
+
+
+.team-4 {
+    background-image: url('/img/team/team-4.jpg');
+}
+
+.Team-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-left: 15%;
+}
+
+.Team-card {
+    background-color: #ffffff;
+    width: 220px;
+    height: 450px;
+    margin: 10px;
+    border-radius: 15px;
+
+}
+
+.Team-image {
+
+    height: 150px;
+    margin-bottom: 15px;
+    background-size: cover;
+    border-radius: 15px 15px 0 0;
+
+}
+
+@media (max-width: 768px) {
+    .Team-container {
+        margin-left: 0;
+
+        justify-content: center;
+
+    }
+}
+
+fieldset {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+.section-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.section-item {
+    width: calc(33% - 10px);
+    margin-bottom: 20px;
 }
